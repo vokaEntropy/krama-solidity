@@ -12,16 +12,41 @@
 			},
 			{
 				"inputs": [],
+				"name": "currentStatus",
+				"outputs": [
+					{
+						"internalType": "enum Krama.Status",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "getMaxVersion",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "givePleaseYourMoney",
-				"outputs": [],
-				"stateMutability": "payable",
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "targetAddress",
+						"type": "address"
+					}
+				],
+				"name": "getYourBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -39,7 +64,40 @@
 			},
 			{
 				"inputs": [],
-				"name": "sendAllMoneyToOwner",
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "repository",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "sendMoney",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "sendMoneyOwner",
 				"outputs": [],
 				"stateMutability": "payable",
 				"type": "function"
@@ -86,11 +144,11 @@
 	},
 	"sources": {
 		"contracts/Krama.sol": {
-			"keccak256": "0xdb8333c2b96be1184c2c6b63498a2f42354b1a195b32c7c7b9f12f0d8305bb5d",
+			"keccak256": "0xc667a4dcc4918879a73f7998446671c2f54dafbf56072462f85f43071ab72868",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://93faabbb56b3ccbfb2a1018356169d8437fdbd6ba353ea3a1f5be29d5986570b",
-				"dweb:/ipfs/QmS5Chs6TQjPP3Vr6iYvKtxTZp7ZGiPvRdSkMymEhMQHto"
+				"bzz-raw://eb7143a02caea7ad9fbc6cd0970b40015996b0d773554a34b0fb657f5d0e16b5",
+				"dweb:/ipfs/QmamDyMTkmPEQJuHyMkCJPeMa45FUSUZ6zVRaxEdwW5FrE"
 			]
 		}
 	},

@@ -12,20 +12,35 @@ contract Krama {
     // Minimal in uint - uint8
     int8 public version = -128;
     int8 public maxVersion;
+    
+    string public name = 'Krama';
+    string public repository = 'https://github.com/vokaEntropy/krama-solidity';
+
+    enum Status { NotPaid, Paid }
+    Status public currentStatus = Status.NotPaid;
 
     constructor() {
         owner = msg.sender;
+    }
+
+    function getYourBalance(address targetAddress) public view returns(uint) {
+       return targetAddress.balance;
     }
 
     function getMaxVersion() public {
         maxVersion = type(int8).max;
     }
 
-    function givePleaseYourMoney() public payable {
+    function sendMoney() public payable {
         payments[msg.sender] = msg.value;
+        currentStatus = Status.Paid;
     }
 
-    function sendAllMoneyToOwner() public payable {
+    // function getPayments() public view returns(memory mapping(address => uint)) {
+    //    return payments;
+    // }
+
+    function sendMoneyOwner() public payable {
         // Local, temp vars
         address payable _to = payable(owner);
         address _kramaContract = address(this);
