@@ -23,8 +23,8 @@ contract Krama {
         owner = msg.sender;
     }
 
-    function getYourBalance(address targetAddress) public view returns(uint) {
-       return targetAddress.balance;
+    function getBalance() public view returns(uint) {
+        return address(this).balance;
     }
 
     function getMaxVersion() public {
@@ -35,10 +35,6 @@ contract Krama {
         payments[msg.sender] = msg.value;
         currentStatus = Status.Paid;
     }
-
-    // function getPayments() public view returns(memory mapping(address => uint)) {
-    //    return payments;
-    // }
 
     function sendMoneyOwner() public payable {
         // Local, temp vars
