@@ -11,6 +11,19 @@
 				"type": "constructor"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "newName",
+						"type": "string"
+					}
+				],
+				"name": "changeContractName",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "currentStatus",
 				"outputs": [
@@ -25,24 +38,11 @@
 			},
 			{
 				"inputs": [],
-				"name": "getMaxVersion",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "targetAddress",
-						"type": "address"
-					}
-				],
-				"name": "getYourBalance",
+				"name": "getBalance",
 				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "balance",
 						"type": "uint256"
 					}
 				],
@@ -51,15 +51,15 @@
 			},
 			{
 				"inputs": [],
-				"name": "maxVersion",
+				"name": "getMaxVersion",
 				"outputs": [
 					{
 						"internalType": "int8",
-						"name": "",
+						"name": "max",
 						"type": "int8"
 					}
 				],
-				"stateMutability": "view",
+				"stateMutability": "pure",
 				"type": "function"
 			},
 			{
@@ -144,11 +144,11 @@
 	},
 	"sources": {
 		"contracts/Krama.sol": {
-			"keccak256": "0xc667a4dcc4918879a73f7998446671c2f54dafbf56072462f85f43071ab72868",
+			"keccak256": "0x2c3aedf918b2c8277092e76f575f1600572d27404c4d26223fa32fb64b6271ea",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://eb7143a02caea7ad9fbc6cd0970b40015996b0d773554a34b0fb657f5d0e16b5",
-				"dweb:/ipfs/QmamDyMTkmPEQJuHyMkCJPeMa45FUSUZ6zVRaxEdwW5FrE"
+				"bzz-raw://37f736bf2c4bdaaa9f5d99faadc1676215779ea6adf52043b4635602974dd122",
+				"dweb:/ipfs/QmbNz6scpdm57JyuEZwLKzCJKUnnGj15B7Qmm1mRBarvKj"
 			]
 		}
 	},

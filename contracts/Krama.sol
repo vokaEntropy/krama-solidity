@@ -10,8 +10,7 @@ contract Krama {
     mapping (address => uint) payments;
 
     // Minimal in uint - uint8
-    int8 public version = -128;
-    int8 public maxVersion;
+    int8 public version = -127;
     
     string public name = 'Krama';
     string public repository = 'https://github.com/vokaEntropy/krama-solidity';
@@ -23,12 +22,20 @@ contract Krama {
         owner = msg.sender;
     }
 
-    function getBalance() public view returns(uint) {
-        return address(this).balance;
+    // Scope types   - public, external, internal, private
+    // And modifiers - view (read data), pure (don't read memory data), paybale
+    function getBalance() public view returns(uint balance) {
+        balance = address(this).balance;
+        // no need
+        // return balance;
     }
 
-    function getMaxVersion() public {
-        maxVersion = type(int8).max;
+    function getMaxVersion() public pure returns(int8 max) {
+        max = type(int8).max;
+    }
+
+    function changeContractName(string memory newName) external{
+        name = newName;
     }
 
     function sendMoney() public payable {
