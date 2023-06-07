@@ -18,36 +18,47 @@ contract Krama {
     enum Status { NotPaid, Paid }
     Status public currentStatus = Status.NotPaid;
 
+    // Run after add contract to blockchain one time
     constructor() {
         owner = msg.sender;
     }
 
+    modifier onlyOwner() {
+        if (msg.sender != owner) {
+            revert(unicode"😡 WAT YOU DOING!!! THIS IS MY MONEY!!! 😡");
+        }
+        _;
+    }
+
     // Scope types   - public, external, internal, private
     // And modifiers - view (read data), pure (don't read memory data), paybale
-    function getBalance() public view returns(uint balance) {
+    function getBalance() public view onlyOwner returns(uint balance) {
         balance = address(this).balance;
         // no need
         // return balance;
     }
 
-    function getMaxVersion() public pure returns(int8 max) {
+    function getMaxVersion() public view onlyOwner returns(int8 max) {
         max = type(int8).max;
     }
 
-    function changeContractName(string memory newName) external{
+    function changeContractName(string memory newName) external onlyOwner{
         name = newName;
     }
 
-    function sendMoney() public payable {
+    event Paid(address indexed _from, uint _amount, uint _timestamp);
+
+    function pay() public payable {
         payments[msg.sender] = msg.value;
         currentStatus = Status.Paid;
+
+        emit Paid(msg.sender, msg.value, block.timestamp);
     }
 
-    function sendMoneyOwner() public payable {
-        // Local, temp vars
-        address payable _to = payable(owner);
-        address _kramaContract = address(this);
+    function withdraw(address payable _to) external onlyOwner {
+        // require(msg.sender == owner, unicode"😡 WAT YOU DOING!!! THIS IS MY MONEY!!! 😡");
 
-        _to.transfer(_kramaContract.balance);
+        assert(true);
+        _to.transfer(address(this).balance);
     }
 }

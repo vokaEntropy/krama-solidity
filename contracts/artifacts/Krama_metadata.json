@@ -11,6 +11,31 @@
 				"type": "constructor"
 			},
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_from",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "Paid",
+				"type": "event"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "string",
@@ -59,7 +84,7 @@
 						"type": "int8"
 					}
 				],
-				"stateMutability": "pure",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -77,6 +102,13 @@
 			},
 			{
 				"inputs": [],
+				"name": "pay",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "repository",
 				"outputs": [
 					{
@@ -90,20 +122,6 @@
 			},
 			{
 				"inputs": [],
-				"name": "sendMoney",
-				"outputs": [],
-				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "sendMoneyOwner",
-				"outputs": [],
-				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
 				"name": "version",
 				"outputs": [
 					{
@@ -113,6 +131,19 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "_to",
+						"type": "address"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -144,11 +175,11 @@
 	},
 	"sources": {
 		"contracts/Krama.sol": {
-			"keccak256": "0x2c3aedf918b2c8277092e76f575f1600572d27404c4d26223fa32fb64b6271ea",
+			"keccak256": "0x4047d6341a18ee17bf541c7df69afc444e7e2e5109ae940df1154a2a65f44f12",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://37f736bf2c4bdaaa9f5d99faadc1676215779ea6adf52043b4635602974dd122",
-				"dweb:/ipfs/QmbNz6scpdm57JyuEZwLKzCJKUnnGj15B7Qmm1mRBarvKj"
+				"bzz-raw://1b836e033d565b000b05a395c5498d79b2a9a6fed02b16f7a8c783a7a07e3528",
+				"dweb:/ipfs/QmQEFePfi9NCrJfjpKqe67ivDMNDcYsw8LaqFHeZy9LskX"
 			]
 		}
 	},
